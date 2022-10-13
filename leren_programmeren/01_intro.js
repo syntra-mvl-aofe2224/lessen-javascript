@@ -6,7 +6,6 @@ Use /* to start a multi-line comment
 */
 // To end a multi-line comment we use */
 
-console.log("Hello Syntra");
+console.log('Hello Syntra');
 
 // Run this file in the terminal by using 'node intro.js'
-

@@ -12,5 +12,3 @@ const FIXED_VAR = 55;
 
 console.log(aNumber);
 console.log(something); // undefined
-
-

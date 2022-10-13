@@ -1,17 +1,4 @@
-/*
-number
-*/
-
-// 45
-// 34.5
-
-// string
-
-// 'Hello'
-
-// "Hello"
-
-// `Hello`
+// Strings
 
 let someString = 'Word Two Three';
 let otherString = 'Four';
@@ -33,36 +20,9 @@ console.log(lowerLongString);
 console.log(firstLetter);
 console.log(lastLetter);
 
+// substring
 
-// boolean
+let aString = 'Contactlenzen';
 
-// true
-
-// false
-
-// null
-
-// null
-
-// undefined
-
-// undefined
-
-
-
-// variables
-
-let aNumber = 36;
-
-let helloWorld = 'Hello World';
-
-let something;
-
-var oldVariable = 'test'; // niet gebruiken
-
-const FIXED_VAR = 55;
-
-console.log(aNumber);
-console.log(something); // undefined
-
-
+aString.substring(0, 7); // 'Contact';
+aString.substring(7); // 'lenzen';
