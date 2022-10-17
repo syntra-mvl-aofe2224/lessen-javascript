@@ -36,3 +36,27 @@ let numberThree = 3;
 
 console.log(numberOne === numberTwo && numberOne === numberThree);
 console.log(numberOne === numberTwo || numberTwo === numberThree);
+
+// SWITCH
+let numOne = 2;
+let numTwo = 3;
+let operator = 'plus';
+let result;
+
+switch (operator) {
+    case 'min':
+        result = numOne - numTwo;
+        break;
+    case 'add':
+    case 'plus':
+        result = numOne + numTwo;
+        break;
+    case 'multiply':
+        result = numOne * numTwo;
+        break;
+    case 'divide':
+        result = numOne / numTwo;
+        break;
+    default:
+        result = 'Operator not found';
+}
