@@ -3,11 +3,23 @@
 // return 'adult' if the age is higher than 17
 // return 'child' if the age is lower then 18
 function adultOrNot(age) {
+    // if (age >= 18) {
+    //     return 'adult';
+    // } else {
+    //     return 'child';
+    // }
+    //
+    // if (age < 18) {
+    //     return 'child';
+    // } else {
+    //     return 'adult';
+    // }
+
     if (age >= 18) {
         return 'adult';
-    } else {
-        return 'child';
     }
+
+    return 'child';
 }
 
 console.log(adultOrNot(15)); // -> 'child'
@@ -39,7 +51,7 @@ console.log(oddOrEven(44)); // -> 'even'
 // return 'tof [word]' when the word rimes with tof
 // return 'that doesn't rime' when it does not
 function rimesWithTof(word) {
-    let endOfWord = word.substring(word.length - 3);
+    let endOfWord = word.substring(word.length - 2);
     if (endOfWord === 'of') {
         return 'tof ' + word;
     } else {
@@ -52,6 +64,7 @@ console.log(rimesWithTof('boem')); // -> "that doesn't rime" || 'that doesn\'t r
 
 // return true if word is already capitalised
 // return false if it is not
+
 function isCapitalised(word) {
     let firstLetter = word.charAt(0);
     let otherLetters = word.substring(1);
