@@ -33,3 +33,7 @@ console.log(testNum); // -> 8;
 
 console.log(testNum++); // -> 9
 console.log(testNum);
+
+let testString = 'blabla';
+
+testString += '!!'; // -> 'blabla!!'
