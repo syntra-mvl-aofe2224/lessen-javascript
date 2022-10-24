@@ -79,40 +79,65 @@ function calculate(operator, numOne, numTwo) {
 Count all the words in [text]
  */
 
-function countWords(text) {
-    let numberOfWords = 1;
-
-    for (let i = 0; i < text.length; i++) {
-        if (text.charAt(i) === ' ') {
-            numberOfWords += 1;
-        }
-    }
-
-    return numberOfWords;
-}
-
-////// Tests \\\\\\
-console.log(countWords('United suns, to the holodeck.')); // > 5
-console.log(
-    countWords(
-        'When one traps bliss and joy, one is able to facilitate totality.'
-    )
-); // > 12
-console.log(countWords('Captains are the bung holes of the salty madness.')); // > 9
-console.log(countWords(' Captains are the bung holes of the salty madness.')); // > 9
-console.log(
-    countWords(' Captains are the bung    holes of the salty madness.')
-); // > 9
-console.log(
-    countWords(' Captains are the bung    holes of the salty madness . ')
-); // > 9
+// function countWords(text) {
+//     let numberOfWords = 1;
+//
+//     for (let i = 1; i < text.length; i++) {
+//         if (
+//             text.charAt(i) === ' ' &&
+//             text.charAt(i - 1) !== ' ' &&
+//             text.charAt(i + 1) !== '.' &&
+//             i !== text.length - 1
+//         ) {
+//             numberOfWords += 1;
+//         }
+//     }
+//
+//     return numberOfWords;
+// }
+//
+// ////// Tests \\\\\\
+// console.log(countWords('United suns, to the holodeck.')); // > 5
+// console.log(
+//     countWords(
+//         'When one traps bliss and joy, one is able to facilitate totality.'
+//     )
+// ); // > 12
+// console.log(countWords('Captains are the bung holes of the salty madness.')); // > 9
+// console.log(countWords(' Captains are the bung holes of the salty madness.')); // > 9
+// console.log(countWords('  Captains are the bung holes of the salty madness.')); // > 9
+// console.log(
+//     countWords(' Captains are the bung    holes of the salty madness.')
+// ); // > 9
+// console.log(
+//     countWords(' Captains are the bung    holes of the salty madness. ')
+// ); // > 9
+// console.log(
+//     countWords(' Captains are the bung    holes of the salty madness .')
+// ); // > 9
 
 ////// First Letters \\\\\\
 /*
 Return a string containing all the first letters of the words in [text]
  */
 
-function firstLetters(text) {}
+function firstLetters(text) {
+    let firstLetters = '';
+
+    for (let i = 0; i < text.length; i++) {
+        if (i === 0 && text.charAt(i) !== ' ') {
+            firstLetters += text.charAt(i);
+        } else if (
+            text.charAt(i) !== ' ' &&
+            text.charAt(i) !== '.' &&
+            text.charAt(i - 1) === ' '
+        ) {
+            firstLetters += text.charAt(i);
+        }
+    }
+
+    return firstLetters;
+}
 
 ////// Tests \\\\\\
 console.log(firstLetters('United suns, to the holodeck.')); // > 'Ustth'
