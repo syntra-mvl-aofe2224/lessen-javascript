@@ -39,6 +39,10 @@ console.log(someNumber.toString());
 
 console.log('test' / 3);
 
+if (Number.isNaN(number)) {
+  // test if number is NaN;
+}
+
 // Infinity
 
 console.log(-11 / 0);

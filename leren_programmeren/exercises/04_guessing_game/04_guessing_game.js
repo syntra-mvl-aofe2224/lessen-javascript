@@ -23,3 +23,10 @@ console.log('hello world');
 // prompt
 // let name = prompt('What is your name?');
 // console.log(name);
+
+console.log(Math.floor(Math.random() * 11));
+
+// Math.floor(Math.random() * 11) -> random getal tussen 0 en 10
+
+let number = prompt('Guess a number between 0 and 10?');
+console.log(Number.parseInt(number));
