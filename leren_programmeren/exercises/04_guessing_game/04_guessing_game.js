@@ -11,22 +11,91 @@
  *              - if false: alert 'See you next time'
  */
 
-console.log('hello world');
+function generateRandomNumberBetween0And10() {
+    let randomNumber = Math.floor(Math.random() * 11);
+    console.log(randomNumber);
 
-// alert
-// alert('hello world');
+    return randomNumber;
+}
 
-// confirm
-// let yesOrNo = confirm('Are you hungry?');
-// console.log(yesOrNo);
+function askForNumberBetween0And10() {
+    let userNumber = prompt('Enter a number between 0 and 10');
+    let parsedUserNumber = Number.parseInt(userNumber);
 
-// prompt
-// let name = prompt('What is your name?');
-// console.log(name);
+    while (
+        Number.isNaN(parsedUserNumber) ||
+        parsedUserNumber < 0 ||
+        parsedUserNumber > 10
+    ) {
+        userNumber = prompt(
+            userNumber +
+                ' is not a valid number. Enter a number between 0 and 10!'
+        );
 
-console.log(Math.floor(Math.random() * 11));
+        parsedUserNumber = Number.parseInt(userNumber);
+    }
 
-// Math.floor(Math.random() * 11) -> random getal tussen 0 en 10
+    return parsedUserNumber;
+}
 
-let number = prompt('Guess a number between 0 and 10?');
-console.log(Number.parseInt(number));
+function guessingGameRound() {
+    let randomNumber = generateRandomNumberBetween0And10();
+    let userNumber;
+    let guessCount = 0;
+
+    do {
+        userNumber = askForNumberBetween0And10();
+        guessCount++;
+
+        if (userNumber < randomNumber) {
+            alert(userNumber + ' is too low, try again.');
+        } else {
+            alert(userNumber + ' is too high, try again.');
+        }
+    } while (randomNumber !== userNumber && guessCount < 5);
+
+    if (randomNumber === userNumber) {
+        return confirm('You won in ' + guessCount + ' times. Play again?');
+    } else {
+        return confirm(
+            'You lost, the number was ' + randomNumber + '. Play again?'
+        );
+    }
+}
+
+function guessingGameRoundWhile() {
+    let randomNumber = generateRandomNumberBetween0And10();
+    let userNumber = askForNumberBetween0And10();
+    let guessCount = 1;
+
+    while (randomNumber !== userNumber && guessCount < 5) {
+        if (userNumber < randomNumber) {
+            alert(userNumber + ' is too low, try again.');
+        } else {
+            alert(userNumber + ' is too high, try again.');
+        }
+
+        userNumber = askForNumberBetween0And10();
+        guessCount++;
+    }
+
+    if (randomNumber === userNumber) {
+        return confirm('You won in ' + guessCount + ' times. Play again?');
+    } else {
+        return confirm(
+            'You lost, the number was ' + randomNumber + '. Play again?'
+        );
+    }
+}
+
+function guessingGame() {
+    let playAgain = true;
+
+    while (playAgain) {
+        playAgain = guessingGameRoundWhile();
+    }
+
+    alert('See you next time!');
+}
+
+guessingGame();
