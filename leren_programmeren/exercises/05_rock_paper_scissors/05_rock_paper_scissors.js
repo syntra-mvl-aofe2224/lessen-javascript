@@ -24,6 +24,9 @@
 // [BONUS EXERCISE] - Make this game a best of 5 game:
 // Whenever the AI or the player achieves 3 points he, she or it has won.
 
+const MAX_ROUNDS = 2;
+const MAX_SCORE = MAX_ROUNDS / 2;
+
 function randomNumberBetween0And2() {
     return Math.floor(Math.random() * 3);
 }
@@ -60,33 +63,92 @@ function askForRPS() {
     return rpsToNumber(userRPS);
 }
 
+/**
+ * rpsGameRound
+ * @returns {boolean} Returns true if player won and false if AI won
+ */
 function rpsGameRound() {
     let userRPS = askForRPS();
     let aiRPS = randomNumberBetween0And2();
 
-    if (userRPS === aiRPS) {
-        return confirm('It was a tie, play again?');
-    } else if (
+    while (userRPS === aiRPS) {
+        alert('It was a tie, try again.');
+        userRPS = askForRPS();
+        aiRPS = randomNumberBetween0And2();
+    }
+
+    if (
         (userRPS === 0 && aiRPS === 2) ||
         (userRPS === 1 && aiRPS === 0) ||
         (userRPS === 2 && aiRPS === 1)
     ) {
-        return confirm('You won, play again?');
+        return true;
     } else {
-        return confirm('You lost, play again?');
+        return false;
+    }
+}
+
+function rpsMatch() {
+    let computerScore = 0;
+    let playerScore = 0;
+
+    while (
+        computerScore <= MAX_SCORE &&
+        playerScore <= MAX_SCORE &&
+        playerScore + computerScore < MAX_ROUNDS
+    ) {
+        let playerWon = rpsGameRound();
+
+        if (playerWon) {
+            playerScore++;
+            alert(
+                `You won the current score is: Player ${playerScore} | AI ${computerScore}.`
+            );
+        } else {
+            computerScore++;
+            alert(
+                'You lost the current score is: Player ' +
+                    playerScore +
+                    ' | AI ' +
+                    computerScore +
+                    '.'
+            );
+        }
     }
 
-    // confirm 'Player: 4 | AI: 2 Play again?'
+    if (playerScore > MAX_SCORE) {
+        return confirm(
+            'You won the match with ' +
+                playerScore +
+                '/' +
+                computerScore +
+                '. Play again?'
+        );
+    } else if (computerScore > MAX_SCORE) {
+        return confirm(
+            'You lost the match with ' +
+                playerScore +
+                '/' +
+                computerScore +
+                '. Play again?'
+        );
+    } else {
+        return confirm(
+            'The match was a tie ' +
+                playerScore +
+                '/' +
+                computerScore +
+                '. Play again?'
+        );
+    }
 }
 
 function rpsGame() {
     let playAgain = true;
 
     while (playAgain) {
-        playAgain = rpsGameRound();
+        playAgain = rpsMatch();
     }
-
-    alert('See you next time!');
 }
 
 rpsGame();
