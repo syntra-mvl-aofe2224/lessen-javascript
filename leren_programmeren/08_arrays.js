@@ -62,6 +62,8 @@ arrayOne.push(4);
 console.log('arrayOne', arrayOne);
 console.log('arrayTwo', arrayTwo);
 
+// compare
+
 // loops
 
 for (let i = 0; i < arrayOne.length; i++) {
@@ -71,3 +73,15 @@ for (let i = 0; i < arrayOne.length; i++) {
 for (let i in arrayOne) {
     console.log(arrayOne[i]);
 }
+
+// join()
+
+// split()
+
+// concat()
+
+// .indexOf() / .lastIndexOf() / .includes()
+
+// .reverse()
+
+// typeof / isArray
