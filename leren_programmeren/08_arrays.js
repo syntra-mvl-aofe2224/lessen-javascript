@@ -67,21 +67,60 @@ console.log('arrayTwo', arrayTwo);
 // loops
 
 for (let i = 0; i < arrayOne.length; i++) {
-    console.log(arrayOne[i]);
+    // console.log(arrayOne[i]);
 }
 
 for (let i in arrayOne) {
-    console.log(arrayOne[i]);
+    // console.log(arrayOne[i]);
 }
 
 // join()
 
+let stringArray = ['Hello', 'world'];
+// console.log(stringArray.join(' '));
+
 // split()
+let aString = 'Hello everybody, welcome!';
+// console.log(aString.split(' '));
 
 // concat()
 
+let arrA = [3, 5, 7, 9, 7];
+let arrB = [2, 4, 6, 8];
+
+let longArr = arrA.concat(arrB);
+//
+// console.log(longArr);
+// console.log(arrA);
+// console.log(arrB);
+
 // .indexOf() / .lastIndexOf() / .includes()
+let firstSeven = longArr.indexOf(7);
+let seconSeven = longArr.indexOf(7, firstSeven + 1);
+// console.log(firstSeven);
+// console.log(seconSeven);
+// console.log(longArr.lastIndexOf(7));
+// console.log(longArr.indexOf(11));
+// console.log(longArr.includes(11));
 
 // .reverse()
 
+// console.log(longArr.reverse());
+// console.log(longArr);
+
 // typeof / isArray
+
+console.log(typeof 78);
+console.log(typeof 'string');
+console.log(typeof [1, 2, 3]);
+console.log(Array.isArray([1, 2, 3]));
+
+// compare arrays
+
+let firstArray = [1, 2, 3];
+let secondArray = [1, 2, 3];
+let thirdArray = firstArray;
+
+console.log(firstArray, secondArray, thirdArray);
+
+console.log(firstArray === thirdArray);

@@ -26,3 +26,8 @@ let aString = 'Contactlenzen';
 
 aString.substring(0, 7); // 'Contact';
 aString.substring(7); // 'lenzen';
+
+// convert to string
+
+console.log(String(88));
+console.log(Boolean(1));

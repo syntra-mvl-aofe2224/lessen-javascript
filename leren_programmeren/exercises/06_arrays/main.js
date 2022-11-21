@@ -42,7 +42,21 @@ function sort(anArray) {}
  * @return {string}
  */
 function reverseString(str) {
-    // return str.split('').reverse().join('');
+  let strArray = str.split('');
+  let reverseArray = [];
+  console.log(strArray);
+  
+  for (let i = 0; i < strArray.length; i++) {
+    reverseArray.unshift(strArray[i].toLowerCase());
+  }
+  
+  for (let i = 0; i < strArray.length; i++) {
+    if (strArray[i] === strArray[i].toUpperCase()) {
+      reverseArray[i] = reverseArray[i].toUpperCase();
+    }
+  }
+  
+  return reverseArray.join('');
 }
 
 /**

@@ -24,6 +24,10 @@ let aNumberFromString = parseInt('9.9'); //-> 9
 let otherNumberFromString = Number('10'); //-> 10
 let floatFromString = Number('9.9'); //-> 9.9
 
+console.log('Number', Number('34.9abc'));
+console.log('ParseInt', parseInt('34.9abc'));
+console.log('ParseFloat', parseFloat('34.9abc'));
+
 console.log(aNumberFromString);
 console.log(otherNumberFromString);
 
@@ -40,9 +44,9 @@ console.log(someNumber.toString());
 
 console.log('test' / 3);
 
-if (Number.isNaN(number)) {
-    // test if number is NaN;
-}
+// if (Number.isNaN(number)) {
+// test if number is NaN;
+// }
 
 // Infinity
 
